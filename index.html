@@ -11,13 +11,18 @@
     <div class="container mt-5">
         <div class ="form-group">
             <label for="password input">Password</label>
-            <div class="form-group">
+            <div class="input-group">
                 <input type="password" id="passwordInput" class="form-control" placeholder="Enter your password">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" id="togglePassword">👁️</button>
                 </div>
             </div>
             <div id="passwordStrength" class="mt-2"></div>
+            <ul id ="passwordCriteria" class="list-unstyled mt-2">
+                <li id = "lengthCriteria" class = "text-muted">At least 8 characters</li>
+                <li id = "numberCriteria" class ="text-muted">At least one number</li>
+                <li id = "specialCharCriteria" class ="text-muted">At least one special character </li>
+            </ul>
         </div>
     </div>
     <script src="script.js"></script>

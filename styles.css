@@ -1,37 +1,60 @@
-/* styles.css */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
-  }
-  
-  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
     max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover{
+    transform: scale(1.02);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
     font-weight: bold;
-  }
-  
-  .input-group {
+    font-size: 1.1rem;
+}
+
+.input-group {
     position: relative;
     width: 100%;
-  }
-  
-  #passwordInput {
-    border-radius: 4px;
-  }
-  
-  #togglePassword {
+}
+
+#passwordInput {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#passwordInput:focus {
+    border-color: #80dbff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-group-append {
+    display: flex;
+    align-items: center;
+}
+
+#togglePassword {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -39,26 +62,55 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  #passwordStrength {
+    font-size: 1.5rem;
+    color: #6c757d;
+    transition: color 0.3 secs ease;
+}
+
+#togglePassword :hover{
+    color: #495057;
+}
+
+#passwordStrength {
     height: 10px;
     margin-top: 10px;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
     border-radius: 4px;
-  }
-  
-  .bg-danger {
+    transition: width 0.3s ease;
+}
+
+.bg-danger {
     background-color: #f44336;
-  }
-  
-  .bg-warning {
+}
+
+.bg-warning {
     background-color: #ffc107;
-  }
-  
-  .bg-success {
+}
+
+.bg-success {
     background-color: #4caf50;
-  }
-  
+}
+
+.text-muted {
+    color: #6c757d !important;
+    transition: color 0.3s ease;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+.list-unstyled {
+    padding-left: 0;
+}
+
+.list-unstyled li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
