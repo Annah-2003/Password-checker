@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     togglePassword.addEventListener('click', function() {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
-        togglePassword.textContent = type === 'password' ? '👁️' : '👁️‍🗨️'; // Change eye emoji based on visibility
+        togglePassword.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
     });
 
     // Check password strength on input
