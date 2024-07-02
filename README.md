@@ -1,15 +1,15 @@
 # Password-checker by Irene Gitau
-The Password Checker Tool is designed to `help users create and verify strong passwords`. This tool offers real-time feedback on password strength and meets essential security criteria. It includes a password visibility toggle, password generation, and copying functionalities to enhance user experience and security.
+ The Password Checker Tool is designed to `help users create and verify strong passwords`. This tool offers real-time feedback on password strength and meets essential security criteria. It includes a password visibility toggle, password generation, and copying functionalities to enhance user experience and security.
 
 ## Table of Contents
  `Introduction`
  `Features`
-`Technologies used`
-`Setup installation`
-`Usage`
-`File Structure`
-`Conributing`
-`License`
+ `Technologies used`
+ `Setup installation`
+ `Usage`
+ `File Structure`
+ `Conributing`
+ `License`
 
 ## Features
  `Real-time Password Strength Check` - Visula ffedback on the strength of the enetred password.
@@ -48,4 +48,17 @@ The Password Checker Tool is designed to `help users create and verify strong pa
 
  4. Copy Password:
      Click on "Copy to Clipboard" to copy the generated password to your clipboard.
+
+## File structure
+    password-checker-tool/
+│
+          ├── index.html            # Main HTML file
+          ├── styles.css            # CSS for styling
+          └── script.js             # JS for functionality
+
+## Contributing.
+ Contributions are welcome and suggestions on improvemnts.
+
+## License
+ This project is licensed under the MIT License. See the LICENSE file for details.
 
