@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         specialChar: document.getElementById('specialCharCriteria')
     };
 
+    // Password expiry date
+    const passwordExpiryDays = 90; // Set password expiry duration
+    let passwordCreationDate = new Date();
+
     // Toggle password visibility
     togglePassword.addEventListener('click', function() {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -30,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update requirements
         updateRequirements(password);
+
+        // Calculate and display entropy
+        const entropy = calculatePasswordEntropy(password);
+        document.getElementById('passwordEntropy').innerText = `Entropy: ${entropy.toFixed(2)} bits`;
     });
 
     // Generate strong password
@@ -44,6 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         passwordInput.select();
         document.execCommand('copy');
         alert('Password copied to clipboard');
+    });
+
+    // Check password breach on blur
+    passwordInput.addEventListener('blur', function() {
+        const password = passwordInput.value;
+        if (password) {
+            checkPasswordBreach(password);
+        }
     });
 
     // Function to check password strength
@@ -85,4 +101,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return password;
     }
+
+    // Function to calculate password entropy
+    function calculatePasswordEntropy(password) {
+        const uniqueChars = new Set(password).size;
+        return uniqueChars * Math.log2(uniqueChars);
+    }
+
+    // Function to check if the password has been involved in a data breach
+    async function checkPasswordBreach(password) {
+        const sha1 = new jsSHA('SHA-1', 'TEXT');
+        sha1.update(password);
+        const hash = sha1.getHash('HEX').toUpperCase();
+        const prefix = hash.substring(0, 5);
+        const suffix = hash.substring(5);
+
+        const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
+        const data = await response.text();
+
+        if (data.includes(suffix)) {
+            alert('This password has been found in a data breach. Please choose a different password.');
+        }
+    }
+
+    // Function to check password expiry
+    function checkPasswordExpiry() {
+        const currentDate = new Date();
+        const diffTime = Math.abs(currentDate - passwordCreationDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays >= passwordExpiryDays) {
+            alert('Your password has expired. Please change it.');
+        }
+    }
+
+    // Check password expiry daily
+    setInterval(checkPasswordExpiry, 86400000); // Check daily
 });

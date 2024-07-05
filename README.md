@@ -51,7 +51,7 @@
 
 ## File structure
     password-checker-tool/
-│
+│    
           ├── index.html            # Main HTML file
           ├── styles.css            # CSS for styling
           └── script.js             # JS for functionality
