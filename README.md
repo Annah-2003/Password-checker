@@ -22,6 +22,14 @@
 
  `Copy to Clipboard` - Copies the generated password to the clipboard for easy use.
 
+ `Modern UI Elements` - Utilizes neumorphism and smooth animations for a contemporary look and feel.
+
+ `Password Entropy Calculation` - Displays the entropy (a measure of randomness) of the password.
+
+ `Real-time Password Breach Check` - Integrates with 'Have I Been Pwned' to check if the entered password has been involved in any known data breaches.
+
+ `Password Expiry Notification`-  Notifies users when it's time to change their passwords based on a set timefram
+
 ## Technologies used
 
  HTML- Structure of the application
@@ -30,6 +38,12 @@
  Bootstrap- general styling for responsive design
 
 ## Setup and Installation
+
+ `Prerequisites`
+ To run this project locally, you need:
+
+ A modern web browser (Chrome, Firefox, Safari, etc.)
+ Basic knowledge of HTML, CSS, and JavaScript
 
 `1. Clone the repository`
 `2. Open index.html in your web-browser`
@@ -61,4 +75,12 @@
 
 ## License
  This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact 
+For any inquiries or feedback , feedback please reach out to my email on             
+       irenengitau@gmail.com 
+
+## Acknowledgements
+ Bootstrap for the CSS framework.
+ Have I Been Pwned for the password breach check API.
 
